@@ -180,42 +180,42 @@
     <parent link="left_fake_thigh_link"/>
     <child link="left_thigh_link"/>
     <axis xyz="0 0 1"/>
-    <limit lower="-3.14" upper="3.14" effort="100" velocity="1000" />
+    <limit lower="-3.14" upper="3.14" effort="27" velocity="26" />
   </joint>
   <joint name="left_knee_joint" type="revolute">
     <origin rpy="0 0 2.8729" xyz="0.14 0 0"/>
     <parent link="left_thigh_link"/>
     <child link="left_shank_link"/>
     <axis xyz="0 0 1"/>
-    <limit lower="-3.14" upper="3.14" effort="100" velocity="1000" />
+    <limit lower="-3.14" upper="3.14" effort="27" velocity="26" />
   </joint>
   <joint name="left_wheel_joint" type="revolute">
     <origin rpy="0 0 0.13433" xyz="0.14 0 0.0537"/>
     <parent link="left_shank_link"/>
     <child link="left_wheel"/>
     <axis xyz="0 0 1"/>
-    <limit effort="5" velocity="1000" />
+    <limit effort="27" velocity="1000" />
   </joint>
   <joint name="right_hip_joint" type="revolute">
     <origin rpy="0 0 -2.8729" xyz="0 0 0"/>
     <parent link="right_fake_thigh_link"/>
     <child link="right_thigh_link"/>
     <axis xyz="0 0 1"/>
-    <limit lower="-3.14" upper="3.14" effort="100" velocity="1000" />
+    <limit lower="-3.14" upper="3.14" effort="27" velocity="26" />
   </joint>
   <joint name="right_knee_joint" type="revolute">
     <origin rpy="0 0 2.8729" xyz="0.14 0 0"/>
     <parent link="right_thigh_link"/>
     <child link="right_shank_link"/>
     <axis xyz="0 0 1"/>
-    <limit lower="-3.14" upper="3.14" effort="100" velocity="1000" />
+    <limit lower="-3.14" upper="3.14" effort="27" velocity="26" />
   </joint>
   <joint name="right_wheel_joint" type="revolute">
     <origin rpy="0 0 -3.0073" xyz="0.14 0 -0.0537"/>
     <parent link="right_shank_link"/>
     <child link="right_wheel"/>
     <axis xyz="0 0 1"/>
-    <limit effort="5" velocity="1000" />
+    <limit effort="27" velocity="26" />
   </joint>
   <joint name="left_fake_hip_joint" type="fixed">
     <origin rpy="1.5708 0.13433 -3.1416" xyz="0 0.18755 0"/>
