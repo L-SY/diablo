@@ -49,6 +49,7 @@
             </xacro:if>
             <xacro:if value="${type == 'continuous'}">
                 <axis xyz="${axis_xyz}"/>
+                <limit effort="${effort}" velocity="${velocity}"/>
             </xacro:if>
             <xacro:if value="${type == 'prismatic'}">
                 <axis xyz="${axis_xyz}"/>

@@ -23,35 +23,6 @@
       </geometry>
     </collision>
   </link>
-  <!-- Imu is fixed to the base link -->
-  <joint name="base_imu_joint" type="fixed">
-    <origin rpy="0.00 0.00 0.00" xyz="0.00 0.00 0.00"/>
-    <parent link="diablo_base_link"/>
-    <child link="base_imu"/>
-  </joint>
-  <!-- Imu link -->
-  <link name="base_imu">
-    <inertial>
-      <mass value="0.01"/>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
-      <inertia ixx="0.000001" ixy="0" ixz="0" iyy="0.000001" iyz="0" izz="0.000001"/>
-    </inertial>
-    <visual>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
-      <geometry>
-        <mesh filename="package://robot_common/include/robot_common/utilities/urdf/imu.stl" scale="1 1 1"/>
-      </geometry>
-    </visual>
-    <material name="orange">
-      <color rgba="255 108 10 255"/>
-    </material>
-  </link>
-  <gazebo reference="base_imu">
-    <material>Gazebo/Orange</material>
-  </gazebo>
-  <gazebo reference="base_imu_joint">
-    <disableFixedJointLumping>true</disableFixedJointLumping>
-  </gazebo>
   <link name="left_thigh_link">
     <inertial>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -204,6 +175,35 @@
       </geometry>
     </collision>
   </link>
+  <!-- Imu is fixed to the base link -->
+  <joint name="base_imu_joint" type="fixed">
+    <origin rpy="0.00 0.00 0.00" xyz="0.00 0.00 0.00"/>
+    <parent link="diablo_base_link"/>
+    <child link="base_imu"/>
+  </joint>
+  <!-- Imu link -->
+  <link name="base_imu">
+    <inertial>
+      <mass value="0.01"/>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <inertia ixx="0.000001" ixy="0" ixz="0" iyy="0.000001" iyz="0" izz="0.000001"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://diablo/urdf/imu/imu.stl" scale="1 1 1"/>
+      </geometry>
+    </visual>
+    <material name="orange">
+      <color rgba="255 108 10 255"/>
+    </material>
+  </link>
+  <gazebo reference="base_imu">
+    <material>Gazebo/Orange</material>
+  </gazebo>
+  <gazebo reference="base_imu_joint">
+    <disableFixedJointLumping>true</disableFixedJointLumping>
+  </gazebo>
   <transmission name="right_hip_joint_tran">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="right_hip_joint">
@@ -247,177 +247,81 @@
   <transmission name="left_wheel_joint_tran">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="left_wheel_joint">
-      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     </joint>
     <actuator name="left_wheel_joint_motor">
-      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
   <transmission name="right_wheel_joint_tran">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="right_wheel_joint">
-      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     </joint>
     <actuator name="right_wheel_joint_motor">
-      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
-      <mechanicalReduction>1</mechanicalReduction>
-    </actuator>
-  </transmission>
-  <transmission name="right_fake_hip_joint_tran">
-    <type>transmission_interface/SimpleTransmission</type>
-    <joint name="right_fake_hip_joint">
-      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="right_fake_hip_joint_motor">
       <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
-  <transmission name="right_fake_knee_joint_tran">
-    <type>transmission_interface/SimpleTransmission</type>
-    <joint name="right_fake_knee_joint">
-      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="right_fake_knee_joint_motor">
-      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-      <mechanicalReduction>1</mechanicalReduction>
-    </actuator>
-  </transmission>
-  <transmission name="left_fake_hip_joint_tran">
-    <type>transmission_interface/SimpleTransmission</type>
-    <joint name="left_fake_hip_joint">
-      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="left_fake_hip_joint_motor">
-      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-      <mechanicalReduction>1</mechanicalReduction>
-    </actuator>
-  </transmission>
-  <transmission name="left_fake_knee_joint_tran">
-    <type>transmission_interface/SimpleTransmission</type>
-    <joint name="left_fake_knee_joint">
-      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="left_fake_knee_joint_motor">
-      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-      <mechanicalReduction>1</mechanicalReduction>
-    </actuator>
-  </transmission>
-  <gazebo>
-    <joint name="close_chain_left" type="revolute">
-      <parent>left_fake_shank_link</parent>
-      <child>left_shank_link</child>
-      <axis>
-        <xyz>0 0 1</xyz>
-      </axis>
-      <pose>0.09 0 0 0 0 0</pose>
-    </joint>
-    <joint name="close_chain_right" type="revolute">
-      <parent>right_fake_shank_link</parent>
-      <child>right_shank_link</child>
-      <axis>
-        <xyz>0 0 1</xyz>
-      </axis>
-      <pose>0.09 0 0 0 0 0</pose>
-    </joint>
-  </gazebo>
-  <link name="left_fake_shank_link">
-    <inertial>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
-      <mass value="0.071103"/>
-      <inertia ixx="1.6657e-05" ixy="-5.5246e-06" ixz="3.9598e-14" iyy="0.00017966" iyz="-6.5493e-15" izz="0.00019328"/>
-    </inertial>
-    <visual>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
-      <geometry>
-        <mesh filename="package://diablo/description/meshes/left_leg3.STL" scale="1 1 1"/>
-      </geometry>
-    </visual>
-    <collision>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
-      <geometry>
-        <mesh filename="package://diablo/description/meshes/left_leg3.STL" scale="1 1 1"/>
-      </geometry>
-    </collision>
-  </link>
-  <link name="right_fake_shank_link">
-    <inertial>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
-      <mass value="0.071103"/>
-      <inertia ixx="1.6657e-05" ixy="-5.5246e-06" ixz="1.4852e-14" iyy="0.00017966" iyz="-6.5194e-14" izz="0.00019328"/>
-    </inertial>
-    <visual>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
-      <geometry>
-        <mesh filename="package://diablo/description/meshes/right_leg3.STL" scale="1 1 1"/>
-      </geometry>
-    </visual>
-    <collision>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
-      <geometry>
-        <mesh filename="package://diablo/description/meshes/right_leg3.STL" scale="1 1 1"/>
-      </geometry>
-    </collision>
-  </link>
-  <joint name="left_hip_joint" type="continuous">
+  <!--            <xacro:create_transmission joint_name="left_wheel_joint" hardware_interface="VelocityJointInterface"/>-->
+  <!--            <xacro:create_transmission joint_name="right_wheel_joint" hardware_interface="VelocityJointInterface"/>-->
+  <joint name="left_hip_joint" type="revolute">
     <origin rpy="0 0 -2.8729" xyz="0 0 0"/>
     <parent link="left_fake_thigh_link"/>
     <child link="left_thigh_link"/>
     <axis xyz="0 0 1"/>
+    <limit effort="27" lower="-3.14" upper="3.14" velocity="26"/>
   </joint>
-  <joint name="left_knee_joint" type="continuous">
+  <joint name="left_knee_joint" type="revolute">
     <origin rpy="0 0 2.8729" xyz="0.14 0 0"/>
     <parent link="left_thigh_link"/>
     <child link="left_shank_link"/>
     <axis xyz="0 0 1"/>
+    <limit effort="27" lower="-3.14" upper="3.14" velocity="26"/>
   </joint>
-  <joint name="right_hip_joint" type="continuous">
+  <joint name="right_hip_joint" type="revolute">
     <origin rpy="0 0 -2.8729" xyz="0 0 0"/>
     <parent link="right_fake_thigh_link"/>
     <child link="right_thigh_link"/>
     <axis xyz="0 0 1"/>
+    <limit effort="27" lower="-3.14" upper="3.14" velocity="26"/>
   </joint>
-  <joint name="right_knee_joint" type="continuous">
+  <joint name="right_knee_joint" type="revolute">
     <origin rpy="0 0 2.8729" xyz="0.14 0 0"/>
     <parent link="right_thigh_link"/>
     <child link="right_shank_link"/>
     <axis xyz="0 0 1"/>
+    <limit effort="27" lower="-3.14" upper="3.14" velocity="26"/>
   </joint>
-  <joint name="left_fake_hip_joint" type="continuous">
+  <joint name="left_fake_hip_joint" type="fixed">
     <origin rpy="1.5708 0.13433 -3.1416" xyz="0 0.18755 0"/>
     <parent link="diablo_base_link"/>
     <child link="left_fake_thigh_link"/>
-    <axis xyz="0 0 1"/>
   </joint>
-  <joint name="left_fake_knee_joint" type="continuous">
-    <origin rpy="0 0 -2.8729" xyz="0.09 0 0"/>
-    <parent link="left_fake_thigh_link"/>
-    <child link="left_fake_shank_link"/>
-    <axis xyz="0 0 1"/>
-  </joint>
-  <joint name="right_fake_hip_joint" type="continuous">
+  <joint name="right_fake_hip_joint" type="fixed">
     <origin rpy="1.5708 0.13433 3.1416" xyz="0 -0.18755 0"/>
     <parent link="diablo_base_link"/>
     <child link="right_fake_thigh_link"/>
-    <axis xyz="0 0 1"/>
-  </joint>
-  <joint name="right_fake_knee_joint" type="continuous">
-    <origin rpy="0 0 -2.8729" xyz="0.09 0 0"/>
-    <parent link="right_fake_thigh_link"/>
-    <child link="right_fake_shank_link"/>
-    <axis xyz="0 0 1"/>
   </joint>
   <joint name="left_wheel_joint" type="continuous">
     <origin rpy="0 0 0.13433" xyz="0.14 0 0.0537"/>
     <parent link="left_shank_link"/>
     <child link="left_wheel"/>
     <axis xyz="0 0 1"/>
+    <limit effort="27" velocity="26"/>
   </joint>
   <joint name="right_wheel_joint" type="continuous">
     <origin rpy="0 0 -3.0073" xyz="0.14 0 -0.0537"/>
     <parent link="right_shank_link"/>
     <child link="right_wheel"/>
     <axis xyz="0 0 1"/>
+    <limit effort="27" velocity="26"/>
   </joint>
+  <gazebo>
+    <plugin filename="librobot_hw_sim.so" name="robot_ros_control">
+      <robotNamespace>/</robotNamespace>
+      <robotSimType>robot_gazebo/RobotHWSim</robotSimType>
+    </plugin>
+  </gazebo>
 </robot>
