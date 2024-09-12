@@ -12,11 +12,6 @@ clip_actions_lower: [-100, -100, -100,
                      -100, -100, -100]
 clip_actions_upper: [100, 100, 100,
                      100, 100, 100]
-rl_kp: [20, 20, 0.6,
-        20, 20, 0.6]
-
-rl_kd: [0.3, 0.3, 0.0,
-        0.3, 0.3, 0.0]
 
 #  maybe could use in stand
 #  fixed_kp: [80, 80, 80,
