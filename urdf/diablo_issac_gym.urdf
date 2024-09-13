@@ -68,16 +68,16 @@
       <inertia ixx="0.0069338" ixy="2.8693e-09" ixz="4.6779e-09" iyy="0.006934" iyz="-5.0441e-11" izz="0.012567"/>
     </inertial>
     <visual>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
-      <geometry>
-        <mesh filename="../meshes/left_wheel.STL" scale="1 1 1"/>
-      </geometry>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <geometry>
+            <cylinder radius="0.1" length="0.05"/>
+        </geometry>
     </visual>
     <collision>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
-      <geometry>
-        <mesh filename="../meshes/left_wheel.STL" scale="1 1 1"/>
-      </geometry>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <geometry>
+            <cylinder radius="0.1" length="0.05"/>
+        </geometry>
     </collision>
   </link>
   <link name="right_thigh_link">
@@ -125,16 +125,16 @@
       <inertia ixx="0.0069339" ixy="-1.3146e-07" ixz="-3.0392e-09" iyy="0.0069339" iyz="-3.5756e-09" izz="0.012567"/>
     </inertial>
     <visual>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
-      <geometry>
-        <mesh filename="../meshes/right_wheel.STL" scale="1 1 1"/>
-      </geometry>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <geometry>
+            <cylinder radius="0.1" length="0.05"/>
+        </geometry>
     </visual>
     <collision>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
-      <geometry>
-        <mesh filename="../meshes/right_wheel.STL" scale="1 1 1"/>
-      </geometry>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <geometry>
+            <cylinder radius="0.1" length="0.05"/>
+        </geometry>
     </collision>
   </link>
   <link name="left_fake_thigh_link">

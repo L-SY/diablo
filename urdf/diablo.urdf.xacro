@@ -20,10 +20,26 @@
                        iyy="0.00048219" iyz="2.5521E-11" izz="0.00050441"
                        mesh_file="package://diablo/meshes/left_leg2.STL"
                        scale_factor="1"/>
-    <xacro:create_link name="left_wheel" mass="2.9494" ixx="0.0069338" ixy="2.8693E-09" ixz="4.6779E-09" iyy="0.006934"
-                       iyz="-5.0441E-11" izz="0.012567"
-                       mesh_file="package://diablo/meshes/left_wheel.STL"
-                       scale_factor="1"/>
+
+    <link name="left_wheel">
+        <inertial>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <mass value="2.9494"/>
+            <inertia ixx="0.0069338" ixy="2.8693e-09" ixz="4.6779e-09" iyy="0.006934" iyz="-5.0441e-11" izz="0.012567"/>
+        </inertial>
+        <visual>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <cylinder radius="0.1" length="0.05"/>
+            </geometry>
+        </visual>
+        <collision>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <cylinder radius="0.1" length="0.05"/>
+            </geometry>
+        </collision>
+    </link>
 
     <xacro:create_link name="right_thigh_link" mass="0.10382" ixx="3.6972E-05" ixy="2.4106E-05" ixz="-4.3686E-10"
                        iyy="0.00029278" iyz="4.1459E-11" izz="0.00032532"
@@ -33,10 +49,26 @@
                        iyy="0.00048219" iyz="4.5225E-11" izz="0.00050441"
                        mesh_file="package://diablo/meshes/right_leg2.STL"
                        scale_factor="1"/>
-    <xacro:create_link name="right_wheel" mass="2.9494" ixx="0.0069339" ixy="-1.3146E-07" ixz="-3.0392E-09"
-                       iyy="0.0069339" iyz="-3.5756E-09" izz="0.012567"
-                       mesh_file="package://diablo/meshes/right_wheel.STL"
-                       scale_factor="1"/>
+
+    <link name="right_wheel">
+        <inertial>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <mass value="2.9494"/>
+            <inertia ixx="0.0069339" ixy="-1.3146e-07" ixz="-3.0392e-09" iyy="0.0069339" iyz="-3.5756e-09" izz="0.012567"/>
+        </inertial>
+        <visual>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <cylinder radius="0.1" length="0.05"/>
+            </geometry>
+        </visual>
+        <collision>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <cylinder radius="0.1" length="0.05"/>
+            </geometry>
+        </collision>
+    </link>
 
     <!-- indispensable fake link-->
     <xacro:create_link name="left_fake_thigh_link" mass="1.3837" ixx="0.003352" ixy="2.7785E-09" ixz="-6.5913E-05" iyy="0.0034908"
