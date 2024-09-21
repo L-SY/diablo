@@ -11,6 +11,14 @@
                        scale_factor="1" vision_scales="0.1 0.1 0.1"
                        collision_scales="0.1 0.1 0.1"/>
 
+<!--    <link name="world"/>-->
+
+<!--    <joint name="world_to_base" type="fixed">-->
+<!--        <parent link="world"/>-->
+<!--        <child link="diablo_base_link"/>-->
+<!--        <origin xyz="0 0 0.3" rpy="0 0 0"/>-->
+<!--    </joint>-->
+
     <!--    main link-->
     <xacro:create_link name="left_thigh_link" mass="0.10382" ixx="3.6972E-05" ixy="2.4106E-05" ixz="4.3699E-10"
                        iyy="0.00029278" iyz="-4.1243E-11" izz="0.00032532"
@@ -113,16 +121,16 @@
                                 origin_rpy="0 0 2.8729" axis_xyz="0 0 1"/>
 
             <xacro:if value="${close_chain}">
-                <xacro:create_joint name="left_fake_hip_joint" type="continuous" parent="diablo_base_link" child="left_fake_thigh_link"
-                                    origin_xyz="0 0.18755 0" origin_rpy="1.5708 0.13433 -3.1416" axis_xyz="0 0 1"/>
-                <xacro:create_joint name="left_fake_knee_joint" type="continuous" parent="left_fake_thigh_link" child="left_fake_shank_link"
+                <xacro:create_joint name="left_fake_hip_joint" type="revolute" parent="diablo_base_link" child="left_fake_thigh_link"
+                                    origin_xyz="0 0.18755 0" origin_rpy="1.5708 0.13433 -3.1416" axis_xyz="0 0 1" lower="-3.14" upper="3.14" effort="27" velocity="26"/>
+                <xacro:create_joint name="left_fake_knee_joint" type="revolute" parent="left_fake_thigh_link" child="left_fake_shank_link"
                                     origin_xyz="0.09 0 0"
-                                    origin_rpy="0 0 -2.8729" axis_xyz="0 0 1"/>
-                <xacro:create_joint name="right_fake_hip_joint" type="continuous" parent="diablo_base_link" child="right_fake_thigh_link"
-                                    origin_xyz="0 -0.18755 0" origin_rpy="1.5708 0.13433 3.1416" axis_xyz="0 0 1"/>
-                <xacro:create_joint name="right_fake_knee_joint" type="continuous" parent="right_fake_thigh_link" child="right_fake_shank_link"
+                                    origin_rpy="0 0 -2.8729" axis_xyz="0 0 1" lower="-3.14" upper="3.14" effort="27" velocity="26"/>
+                <xacro:create_joint name="right_fake_hip_joint" type="revolute" parent="diablo_base_link" child="right_fake_thigh_link"
+                                    origin_xyz="0 -0.18755 0" origin_rpy="1.5708 0.13433 3.1416" axis_xyz="0 0 1" lower="-3.14" upper="3.14" effort="27" velocity="26"/>
+                <xacro:create_joint name="right_fake_knee_joint" type="revolute" parent="right_fake_thigh_link" child="right_fake_shank_link"
                                     origin_xyz="0.09 0 0"
-                                    origin_rpy="0 0 -2.8729" axis_xyz="0 0 1"/>
+                                    origin_rpy="0 0 -2.8729" axis_xyz="0 0 1" lower="-3.14" upper="3.14" effort="27" velocity="26"/>
             </xacro:if>
             <xacro:unless value="${close_chain}">
                 <xacro:create_joint name="left_fake_hip_joint" type="fixed" parent="diablo_base_link" child="left_fake_thigh_link"
