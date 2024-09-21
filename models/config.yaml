@@ -3,6 +3,7 @@ framework: "isaacgym"
 rows: 2
 cols: 3
 use_history: False
+use_vmc: False
 dt: 0.005
 decimation: 2
 num_observations: 27
@@ -20,7 +21,8 @@ clip_actions_upper: [100, 100, 100,
 #             3, 3, 3]
 
 num_of_dofs: 6
-action_scale: 0.5
+action_scale_pos: 0.5
+action_scale_vel: 10.0
 lin_vel_scale: 2.0
 ang_vel_scale: 0.25
 dof_pos_scale: 1.0
