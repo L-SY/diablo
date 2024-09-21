@@ -8,10 +8,10 @@ decimation: 2
 num_observations: 27
 observations: ["ang_vel", "gravity_vec", "commands", "vmc", "wheel", "actions"]
 clip_obs: 100.0
-clip_actions_lower: [-200, -0, -200,
-                     -200, -0, -200]
-clip_actions_upper: [200, 200, 200,
-                     200, 200, 200]
+clip_actions_lower: [-10., -20, -26,
+                     -10., -20, -26]
+clip_actions_upper: [10., 20, 26,
+                     10., 20, 26]
 #clip_actions_lower: [-0.5, 0, -27,
 #                     -0.5, 0, -27]
 #clip_actions_upper: [0.5, 0.5, 27,
@@ -42,6 +42,6 @@ commands_scale: [2.0, 0.25, 5.0]
 torque_limits: [26, 26, 26,
                 26, 26, 26]
 
-default_dof_pos: [ 0.3, -0.75, 0.0,
-                   0.3, -0.75, 0.0]
+default_dof_pos: [ 0., 0., 0.0,
+                   0., 0., 0.0]
 
