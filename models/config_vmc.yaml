@@ -8,10 +8,10 @@ decimation: 2
 num_observations: 27
 observations: ["ang_vel", "gravity_vec", "commands", "vmc", "wheel", "actions"]
 clip_obs: 100.0
-clip_actions_lower: [-20, -10, -27,
-                     -20, -10, -27]
-clip_actions_upper: [20, 10, 27,
-                     20, 10, 27]
+clip_actions_lower: [-200, -200, -200,
+                     -200, -200, -200]
+clip_actions_upper: [200, 200, 200,
+                     200, 200, 200]
 #clip_actions_lower: [-1.57, 0, -27,
 #                     -1.57, 0, -27]
 #clip_actions_upper: [1.57, 0.3, 27,
@@ -33,7 +33,7 @@ l_dot_scale: 0.25
 theta_scale: 1.0
 theta_dot_scale: 0.05
 
-l_offset: 0.
+l_offset: 0.2
 action_scale_l: 0.1
 action_scale_theta: 0.5
 
