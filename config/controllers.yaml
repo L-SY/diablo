@@ -23,9 +23,9 @@ controllers:
         l1: 0.14
         l2: 0.14
       gains:
-        left_r: { p: 500, i: 0.0, d: 30., i_clamp_max: 0., i_clamp_min: 0., antiwindup: true, publish_state: true }
+        left_r: { p: 300, i: 0.0, d: 30., i_clamp_max: 0., i_clamp_min: 0., antiwindup: true, publish_state: true }
         left_theta: { p: 50, i: 0.0, d: 10., i_clamp_max: 0., i_clamp_min: 0., antiwindup: true, publish_state: true }
-        right_r: { p: 500, i: 0.0, d: 30., i_clamp_max: 0., i_clamp_min: 0., antiwindup: true, publish_state: true }
+        right_r: { p: 300, i: 0.0, d: 30., i_clamp_max: 0., i_clamp_min: 0., antiwindup: true, publish_state: true }
         right_theta: { p: 50, i: 0.0, d: 10., i_clamp_max: 0., i_clamp_min: 0, antiwindup: true, publish_state: true }
 
 

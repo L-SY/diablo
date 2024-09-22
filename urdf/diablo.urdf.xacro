@@ -108,13 +108,13 @@
 
         <xacro:unless value="${fixed_leg}">
             <xacro:create_joint name="left_hip_joint" type="revolute" parent="left_fake_thigh_link" child="left_thigh_link"
-                                origin_xyz="0 0 0" lower="-1.57" upper="1.57" effort="27" velocity="26"
+                                origin_xyz="0 0 0" lower="0" upper="1.57" effort="27" velocity="26"
                                 origin_rpy="0 0 -2.8729" axis_xyz="0 0 1"/>
             <xacro:create_joint name="left_knee_joint" type="revolute" parent="left_thigh_link" child="left_shank_link"
                                 origin_xyz="0.14 0 0" lower="-2" upper="0" effort="27" velocity="26"
                                 origin_rpy="0 0 2.8729" axis_xyz="0 0 1"/>
             <xacro:create_joint name="right_hip_joint" type="revolute" parent="right_fake_thigh_link" child="right_thigh_link"
-                                origin_xyz="0 0 0" lower="-1.57" upper="1.57" effort="27" velocity="26"
+                                origin_xyz="0 0 0" lower="0" upper="1.57" effort="27" velocity="26"
                                 origin_rpy="0 0 -2.8729" axis_xyz="0 0 1"/>
             <xacro:create_joint name="right_knee_joint" type="revolute" parent="right_thigh_link" child="right_shank_link"
                                 origin_xyz="0.14 0 0" lower="-2" upper="0" effort="27" velocity="26"
