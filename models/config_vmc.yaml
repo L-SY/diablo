@@ -1,4 +1,4 @@
-model_name: "policy_27_vmc_ct.pt"
+model_name: "policy_27_vmc.pt"
 framework: "isaacgym"
 rows: 2
 cols: 3
@@ -8,10 +8,10 @@ decimation: 2
 num_observations: 27
 observations: ["ang_vel", "gravity_vec", "commands", "vmc", "wheel", "actions"]
 clip_obs: 100.0
-clip_actions_lower: [-10., -10, -26,
-                     -10., -10, -26]
-clip_actions_upper: [10., 10, 26,
-                     10., 10, 26]
+clip_actions_lower: [-20., -20, -26,
+                     -20., -20, -26]
+clip_actions_upper: [20., 20, 26,
+                     20., 20, 26]
 #clip_actions_lower: [-0.5, 0, -27,
 #                     -0.5, 0, -27]
 #clip_actions_upper: [0.5, 0.5, 27,
