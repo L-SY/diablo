@@ -1,4 +1,4 @@
-model_name: "policy_27_vmc_with_wheel.pt"
+model_name: "policy_27_vmc_3w.pt"
 framework: "isaacgym"
 rows: 2
 cols: 3
