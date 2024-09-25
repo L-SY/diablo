@@ -8,10 +8,13 @@ controllers:
 
   wheeled_bipedal_rl_controller:
     type: rl_controller/WheeledBipedalRLController
-    default_length: 0.25
+    default_length: 0.40
     vmc:
       use_vmc: true
       gravity_feedforward: 55
+      # bias compensates for VMC calculations
+      hip_bias: 0.13433
+      knee_bias: -0.2687
       left_vmc:
         type: serial
         centre_offset: 0 # only for parallel now
