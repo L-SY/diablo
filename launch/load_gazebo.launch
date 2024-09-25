@@ -9,8 +9,9 @@
 
     <include file="$(find gazebo_ros)/launch/empty_world.launch">
         <arg name="paused" value="false"/>
-        <arg name="world_name" value="$(find robot_gazebo)/worlds/empty_world.world"/>
-<!--        <arg name="world_name" value="$(find robot_gazebo)/worlds/pole_world.world"/>-->
+<!--        <arg name="world_name" value="$(find robot_gazebo)/worlds/empty_world.world"/>-->
+        <arg name="world_name" value="$(find robot_gazebo)/worlds/pole_world.world"/>
+<!--        <arg name="world_name" value="$(find robot_gazebo)/worlds/stair_world.world"/>-->
     </include>
     <!-- push robot_description to factory and spawn robot in gazebo -->
     <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" clear_params="true"
