@@ -1,6 +1,8 @@
 <launch>
     <param name="diablo_robot_description" command="$(find xacro)/xacro $(find diablo)/urdf/diablo.xacro
-       close_chain:=false
+    "/>
+
+    <param name="robot_description" command="$(find xacro)/xacro $(find diablo)/urdf/diablo.xacro
     "/>
 
     <rosparam file="$(find diablo)/config/hw.yaml" command="load"/>
