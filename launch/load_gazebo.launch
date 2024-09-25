@@ -1,9 +1,16 @@
 <launch>
     <param name="robot_description"
-           command="$(find xacro)/xacro $(find diablo)/urdf/diablo.xacro"/>
+           command="$(find xacro)/xacro $(find diablo)/urdf/diablo.xacro
+           close_chain:=true
+           use_simulation:=true
+    "/>
 
     <param name="diablo_description"
-           command="$(find xacro)/xacro $(find diablo)/urdf/diablo.xacro"/>
+           command="$(find xacro)/xacro $(find diablo)/urdf/diablo.xacro
+           close_chain:=true
+           use_simulation:=true
+    "/>
+
 
     <rosparam file="$(find diablo)/config/gazebo.yaml" command="load"/>
 
