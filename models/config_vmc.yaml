@@ -1,4 +1,4 @@
-model_name: "policy_change_slow.pt"
+model_name: "policy_change_ff.pt"
 framework: "isaacgym"
 rows: 2
 cols: 3
