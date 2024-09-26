@@ -1,4 +1,4 @@
-model_name: "policy_add_pos_noise.pt"
+model_name: "policy_more_turn.pt"
 framework: "isaacgym"
 rows: 2
 cols: 3
