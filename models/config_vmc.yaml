@@ -1,4 +1,4 @@
-model_name: "policy_up.pt"
+model_name: "policy_without_wheel.pt"
 framework: "isaacgym"
 rows: 2
 cols: 3
