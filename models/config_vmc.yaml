@@ -1,4 +1,4 @@
-model_name: "without_vel_limit.pt"
+model_name: "policy_without_rand_pos.pt"
 framework: "isaacgym"
 rows: 2
 cols: 3
