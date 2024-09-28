@@ -1,4 +1,4 @@
-model_name: "policy_27.pt"
+model_name: "policy_asm.pt"
 framework: "isaacgym"
 rows: 2
 cols: 3
@@ -33,5 +33,5 @@ torque_limits: [26, 26, 26,
                 26, 26, 26]
 #default_dof_pos: [ 0, 0, 0.0,
 #                   0, 0, 0.0]
-default_dof_pos: [ 0.65, -1.25, 0.0,
-                   0.65, -1.25, 0.0]
+default_dof_pos: [ -0.5, 1.0, 0.0,
+                   -0.5, 1.0, 0.0]
