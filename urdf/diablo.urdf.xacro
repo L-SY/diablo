@@ -5,7 +5,7 @@
 
 
     <!-- Base Link -->
-    <xacro:create_link name="diablo_base_link" mass="11.639" ixx="0.071628" ixy="-5.9879E-09" ixz="-0.00097471"
+    <xacro:create_link name="diablo_base_link" mass="7" ixx="0.071628" ixy="-5.9879E-09" ixz="-0.00097471"
                        iyy="0.16274" iyz="-1.6369E-08" izz="0.14673"
                        mesh_file="package://diablo/meshes/base_link.stl"
                        scale_factor="1" vision_scales="0.1 0.1 0.1"
@@ -79,12 +79,13 @@
     </link>
 
     <!-- indispensable fake link-->
-    <xacro:create_link name="left_fake_thigh_link" mass="1.3837" ixx="0.003352" ixy="2.7785E-09" ixz="-6.5913E-05" iyy="0.0034908"
-                       iyz="4.5045E-10" izz="0.0034856"
+    <xacro:create_link name="left_fake_thigh_link" mass="2.5" ixx="0.006704" ixy="5.557E-09" ixz="-0.000131826" iyy="0.0069816"
+                       iyz="9.009E-10" izz="0.0069712"
                        mesh_file="package://diablo/meshes/left_motor.STL"
                        scale_factor="1"/>
-    <xacro:create_link name="right_fake_thigh_link" mass="1.3838" ixx="0.003352" ixy="-2.6527E-09" ixz="6.5914E-05"
-                       iyy="0.0034908" iyz="-7.2968E-10" izz="0.0034856"
+
+    <xacro:create_link name="right_fake_thigh_link" mass="2.5" ixx="0.006704" ixy="-5.557E-09" ixz="0.000131826" iyy="0.0069816"
+                       iyz="-9.009E-10" izz="0.0069712"
                        mesh_file="package://diablo/meshes/right_motor.STL"
                        scale_factor="1"/>
 
