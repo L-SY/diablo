@@ -63,7 +63,7 @@
 
 
     <xacro:create_joint name="left_wheel_joint" type="revolute" parent="left_fake_shank_link" child="left_wheel"
-                        origin_xyz="0.14 0 0.0537" origin_rpy="0 0 0.13433" axis_xyz="0 0 1" lower="-1e10" upper="1e10" effort="27" velocity="26"/>
+                        origin_xyz="0.14 0 0.025" origin_rpy="0 0 0.13433" axis_xyz="0 0 1" lower="-1e10" upper="1e10" effort="27" velocity="26"/>
     <xacro:create_joint name="right_wheel_joint" type="revolute" parent="right_fake_shank_link" child="right_wheel"
-                        origin_xyz="0.14 0 -0.0537" origin_rpy="0 0 0.13433" axis_xyz="0 0 1" lower="-1e10" upper="1e10" effort="27" velocity="26"/>
+                        origin_xyz="0.14 0 -0.025" origin_rpy="0 0 0.13433" axis_xyz="0 0 1" lower="-1e10" upper="1e10" effort="27" velocity="26"/>
 </robot>
