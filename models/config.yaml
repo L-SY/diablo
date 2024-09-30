@@ -1,4 +1,4 @@
-model_name: "policy_asm_5w.pt"
+model_name: "policy_asm.pt"
 framework: "isaacgym"
 rows: 2
 cols: 3
