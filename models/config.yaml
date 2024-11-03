@@ -1,4 +1,4 @@
-model_name: "policy_asm_low_torque.pt"
+model_name: "policy_stand_move.pt"
 framework: "isaacgym"
 rows: 2
 cols: 3
@@ -31,7 +31,7 @@ dof_vel_scale: 0.05
 commands_scale: [2.0, 0.25, 5.0]
 torque_limits: [26, 26, 26,
                 26, 26, 26]
-#default_dof_pos: [ 0, 0, 0.0,
-#                   0, 0, 0.0]
-default_dof_pos: [ -0.5, 1.0, 0.0,
-                   -0.5, 1.0, 0.0]
+default_dof_pos: [ 0, 0, 0.0,
+                   0, 0, 0.0]
+#default_dof_pos: [ -0.5, 1.0, 0.0,
+#                   -0.5, 1.0, 0.0]
